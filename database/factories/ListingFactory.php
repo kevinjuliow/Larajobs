@@ -23,10 +23,9 @@ class ListingFactory extends Factory
             'location' => $this->faker->country() , 
             'email' => $this->faker->companyEmail(), 
             'website' => $this ->faker ->url(), 
-            'description' => 'Anim veniam laborum voluptate dolor dolor 
-            id ullamco duis nisi reprehenderit esse. Sint sit consectetur 
-            aliqua sit cupidatat cupidatat nisi dolor consectetur irure consectetur. 
-            Deserunt proident sunt velit ut laboris adipisicing deserunt pariatur.'
+            'description' => 'Consequat dolore nostrud culpa dolore officia laborum irure culpa non proident. Reprehenderit consectetur ad est cillum consequat do eiusmod. Consequat aliquip et eu sunt excepteur aute ex sint tempor ullamco mollit elit. Cillum ullamco ea consequat magna non consequat labore ad id exercitation occaecat excepteur. Dolore excepteur ad fugiat do in ut culpa. Eu irure in deserunt irure aliqua occaecat reprehenderit. Commodo pariatur pariatur reprehenderit culpa ut ex ut excepteur minim.
+
+Nostrud magna cillum deserunt exercitation officia exercitation veniam proident. Lorem laborum tempor consequat excepteur dolore occaecat aliqua nisi. Consectetur aute nisi cupidatat sunt culpa nostrud. Ad Lorem ea ex ut laboris dolor deserunt cupidatat do aliqua. Eu adipisicing non occaecat nostrud sint eu non ipsum veniam.'
         ];
     }
 }

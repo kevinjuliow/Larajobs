@@ -7,18 +7,16 @@
 </head>
 <body>
   @extends('nav')
+
   @section('content')
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-screen-lg mx-auto">
+  @include('partials._jumbotron')
+  @include('partials._searchbar')
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-8">
     @foreach ($listings as $listing)
-    <div class="border-[1px] border-black min-h-[100px] max-h-[240px] bg-gray-200 p-4">
-     <div class="border-b-2">
-       <a class="text-3xl" href={{ "/jobs/" . $listing->id }}>{{ $listing->title }}</a> 
-       <h2>{{ $listing->tags }}</h2>
-     </div>
-     <div class="min-h-[100px] max-h-[200px] bg-gray-200 p-4">
-       <p>{{ $listing->description }}</p>
-     </div>
-    </div>
+    
+  
+    <x-listing-card :listing="$listing"/>
+    
     @endforeach
  </div>
   @endsection

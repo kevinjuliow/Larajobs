@@ -10,9 +10,9 @@ Route::get('/', function () {
 });
 
 
-Route::get('/jobs/{id}' , function($id){
+Route::get('/jobs/{listing}' , function(Listing $listing) {
     return view('listing' , [
-        'listing' => Listing::find( $id ) , 
+        'listing' => $listing , 
     ]); 
 });
 
