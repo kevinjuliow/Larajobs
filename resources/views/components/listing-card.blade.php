@@ -1,6 +1,6 @@
 @props(['listing'])
 
-<div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 min-h-[100px]">
+  <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 min-h-[100px]">
   <a href="/jobs/{{ $listing->id }}">
       <img class="rounded-t-lg" src="images/laravel-icon.webp" alt="" />
   </a>
