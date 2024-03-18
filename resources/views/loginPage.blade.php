@@ -9,6 +9,14 @@
 </head>
 <body>
   <section class="bg-gray-50 dark:bg-gray-900">
+
+    <div class="absolute left-8 top-24">
+        <a href="/">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
+          </svg>
+        </a>
+      </div>
     <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <a href="/" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
             Larajobs    

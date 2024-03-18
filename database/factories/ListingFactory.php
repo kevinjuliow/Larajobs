@@ -18,7 +18,7 @@ class ListingFactory extends Factory
     {
         return [
             'title' => 'Software Engineer' , 
-            'tags' => 'laravel, javascript' , 
+            'tags' => ' laravel, javascript' , 
             'company' => $this->faker->company(), 
             'location' => $this->faker->country() , 
             'email' => $this->faker->companyEmail(), 
