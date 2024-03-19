@@ -15,4 +15,16 @@ class Listing extends Model
                 $query->where('tags','like','%'. $filters . '%');
         }
     }
+
+    public function scopeSearch ($query , $search){
+           if ($search) {
+            $query->where('title','like','%'. $search . '%');
+    }
+    }
+
+    public function scopeLocationSearch($query , $search){
+        if ($search) {
+            $query->where('location','like','%'. $search . '%');
+    }
+    }
 }
