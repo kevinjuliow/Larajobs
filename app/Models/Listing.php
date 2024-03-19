@@ -18,13 +18,9 @@ class Listing extends Model
 
     public function scopeSearch ($query , $search){
            if ($search) {
-            $query->where('title','like','%'. $search . '%');
-    }
-    }
-
-    public function scopeLocationSearch($query , $search){
-        if ($search) {
-            $query->where('location','like','%'. $search . '%');
+            $query->where('title','like','%'. $search . '%')
+                    ->orwhere('location','like','%'. $search . '%')
+                    ->orwhere('tags' , 'like','%'. $search . '%');
     }
     }
 }
