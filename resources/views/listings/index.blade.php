@@ -6,17 +6,23 @@
   @vite('resources/css/app.css')
 </head>
 <body>
+
 <x-layout>
+  <x-flash-message />
   @include('partials._jumbotron')
   @include('partials._searchbar')
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-8">
     @foreach ($listings as $listing)
     
-  
     <x-listing-card :listing="$listing"/>
     
     @endforeach
  </div>
+
+ <div class="mt-20 px-10">
+  {{ $listings->links() }}
+ </div>
 </x-layout>
+
 </body>
 </html>
