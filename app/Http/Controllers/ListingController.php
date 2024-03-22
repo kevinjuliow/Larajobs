@@ -11,8 +11,8 @@ class ListingController extends Controller
     public function index(Request $request) {
         $tags = $request->query('tags');
         $search = $request->query('search') ;
-        $listings = Listing::filter($tags)->get();
-        $listings = Listing::search($search)->get();
+        $listings = Listing::filter($tags)->paginate(8);
+        $listings = Listing::search($search)->paginate(8);
         return view('listings.index' , ['listings' => $listings]);
     }
 
@@ -43,7 +43,7 @@ class ListingController extends Controller
 
         Listing::create($formFields);
 
-        return redirect('/') ;
+        return redirect('/')->with('message', 'Your listing has been created!');
     }
 
 
