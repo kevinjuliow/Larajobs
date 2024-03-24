@@ -21,7 +21,7 @@
   {{-- Logo --}}
   <div class="flex flex-col w-full h-full ">
     <div class="flex justify-center">
-      <img src="{{ asset('images/laravel-icon.webp') }}" class="max-w-[400px]">
+      <img src={{ $listing->logo ? asset('storage/' . $listing->logo) : asset('/images/laravel-icon.webp') }} class="max-w-[400px]">
     </div>
  
    <div class="mt-10 h-60 flex flex-col items-center border-b-2 border-black mx-[20%]">

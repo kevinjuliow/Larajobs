@@ -2,7 +2,7 @@
 
   <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 min-h-[100px]">
   <a href="/jobs/{{ $listing->id }}">
-      <img class="rounded-t-lg" src="images/laravel-icon.webp" alt="" />
+      <img class="rounded-t-lg w-100" src={{ $listing->logo ? asset('storage/' . $listing->logo) : asset('/images/laravel-icon.webp') }} alt="" />
   </a>
   <div class="p-5">
      

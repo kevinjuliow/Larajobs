@@ -41,6 +41,10 @@ class ListingController extends Controller
             'description' => 'required' 
         ]);
 
+        if ($request->hasFile('logo')) {
+            $formFields['logo'] = $request->file('logo')->store('companyLogos','public') ;
+        };
+
         Listing::create($formFields);
 
         return redirect('/')->with('message', 'Your listing has been created!');
