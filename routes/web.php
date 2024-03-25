@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\ListingController;
 use App\Models\Listing;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ListingController;
 
 Route::get('/', [ListingController::class,'index']);
 
@@ -25,7 +26,16 @@ Route::delete('/jobs/{listing}' , [ListingController::class, 'destroy']);
 Route::get('/jobs/{listing}' , [ListingController::class,'show']);
 
 Route::get('/login' , function() {
-    return view('loginPage'); 
+    return view('users.loginPage'); 
 });
+
+//Show Register Form
+Route::get('/register' , [UserController::class , 'create']);
+
+//Store User
+Route::post('/users' , [UserController::class,'store']);
+
+//Log user out
+Route::post('/logout' , [UserController::class,'logout']);
 
 
