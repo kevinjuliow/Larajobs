@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Listing;
 use Illuminate\Http\Request;
+use App\Models\User; 
+
+
 
 class ListingController extends Controller
 {
@@ -45,6 +49,8 @@ class ListingController extends Controller
             $formFields['logo'] = $request->file('logo')->store('companyLogos','public') ;
         };
 
+        $formFields['user_id'] = auth()->id();
+
         Listing::create($formFields);
 
         return redirect('/')->with('message', 'Your listing has been created!');
@@ -71,6 +77,8 @@ class ListingController extends Controller
             $formFields['logo'] = $request->file('logo')->store('companyLogos','public') ;
         };
 
+        
+
         $listing->update($formFields);
 
         return back()->with('message', 'Your listing has been Updated!');
@@ -81,5 +89,11 @@ class ListingController extends Controller
         return redirect('/')->with('message', 'Your listing has been Deleted!');
     }
 
+    public function manage()
+    {
+        $user = auth()->user();
+        $listings = $user->listings()->get();
+        return view('listings.manage' , ['listings' => $listings]);
+    }
 
 }

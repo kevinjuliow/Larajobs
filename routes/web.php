@@ -7,11 +7,17 @@ use App\Http\Controllers\ListingController;
 
 Route::get('/', [ListingController::class,'index']);
 
+
+
+
 //display the create job form
 Route::get('jobs/create', [ListingController::class,'create'])->middleware('auth');
 
 //store the job to db
 Route::post('/jobs' , [ListingController::class,'store'])->middleware('auth');
+
+//Manage Listings
+Route::get('/jobs/manage' , [ListingController::class, 'manage']);
 
 //display edit form
 Route::get('/jobs/{listing}/edit' , [ListingController::class,'edit'])->middleware('auth');
@@ -25,8 +31,10 @@ Route::delete('/jobs/{listing}' , [ListingController::class, 'destroy'])->middle
 //show single listing
 Route::get('/jobs/{listing}' , [ListingController::class,'show']);
 
+
+
 //Show Register Form
-Route::get('/register' , [UserController::class , 'create']);
+Route::get('/register' , [UserController::class , 'create'])->middleware('guest');
 
 //Store User
 Route::post('/users' , [UserController::class,'store']);
@@ -35,7 +43,11 @@ Route::post('/users' , [UserController::class,'store']);
 Route::post('/logout' , [UserController::class,'logout'])->middleware('auth');
 
 //User login form
-Route::get('/login' , [UserController::class,'login'])->name('login');
+Route::get('/login' , [UserController::class,'login'])->name('login')->middleware('guest');
 
 //Authenticate User Login
 Route::post('/users/authenticate' , [UserController::class,'authenticate']); 
+
+
+
+
